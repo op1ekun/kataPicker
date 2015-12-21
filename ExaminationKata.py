@@ -1,29 +1,28 @@
-import ExaminationKataConf
+
 import random
 
 class KataPicker:
 
-    def __init__(self):
+    def __init__(self, conf):
         # get kata configuration
-        self.__confDefaults  = ExaminationKataConf.default
-        self.__confExtras    = ExaminationKataConf.extras
-        self.__confOrder     = ExaminationKataConf.order
+        self.__confDefaults  = conf.default
+        self.__confExtras    = conf.extras
+        self.__confRanks     = conf.ranks
     
     # get only basic kata for a given rank
     def __getConf(self, rank):
-        rankIndx = self.__confOrder.index(rank)
-        rankConf = self.__confDefaults[rankIndx]            
+        rankIndx = self.__confRanks.index(rank)
+        rankConf = self.__confDefaults[rankIndx]
             
         return rankConf
         
     # get kata from previous ranks     
     def __getAllUniquePrevious(self, rank):
         previous = {}
-                
-        if (rank in self.__confOrder):    
-            for i in range(0, self.__confOrder.index(rank)):      
-                for kata in self.__confDefaults[i]['kata']:
-                    previous[kata] = 1   
+   
+        for i in range(0, self.__confRanks.index(rank)):
+            for kata in self.__confDefaults[i]['kata']:
+                previous[kata] = 1   
 
         return sorted(previous.keys())
         
@@ -38,7 +37,7 @@ class KataPicker:
             'extrasVaria'   : [],
         }
         
-        conf = self.__getConf(rank)        
+        conf = self.__getConf(rank)
         
         count = 1
         # prepare normal kata
@@ -59,9 +58,10 @@ class KataPicker:
         # prepare previous kata
         prev = self.__getAllUniquePrevious(rank)
         rand.shuffle(prev)
-        
-        varia = self.__getRandom(self.__confExtras['varia'])
-        examKata['previous'].append('%s - %s' % (prev[0] if len(prev) > 0 else '', varia))
+
+        if (len(prev) > 0):
+            varia = self.__getRandom(self.__confExtras['varia'])
+            examKata['previous'].append('%s - %s' % (prev[0], varia))
         
         # prepare extras
         extra = self.__confExtras['no kata'] + self.__confExtras['dai ken'] + self.__confExtras['pinian']
@@ -74,10 +74,9 @@ class KataPicker:
         varia = self.__getRandom(self.__confExtras['varia'])
         examKata['extrasVaria'].append('%s - %s' % (extra[0], varia))
         
-        return examKata
-        
+        return examKata       
         
     def __getRandom(self, elems):
         rand    = random.Random()
-        indx    = rand.randint(0, (len(elems)-1) )
+        indx    = rand.randint(0, (len(elems)-1))
         return  elems[indx]

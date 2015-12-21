@@ -2,31 +2,31 @@
 
 default = (
     {   'kata'  : ['taikyoku shodan', 'taikyoku nidan', 'taikyoku sandan'] },
-    {   'kata'  : ['heian shodan'] },                    
-    {   'kata'  : ['heian nidan']  },                    
-    {   'kata'  : ['heian sandan'] },                    
-    {   'kata'  : ['heian yodan']  },                    
-    {   'kata'  : ['heian godan']  },                    
-    {   'kata'  : ['tekki shodan'] },                    
-    {   'kata'  : ['bassai dai']   },                    
-    {   'kata'  : ['empi', 'jion', 'hangetsu', 'kanku dai']    },
-    {   'kata'  : ['empi', 'jion', 'hangetsu', 'kanku dai']    },
+    {   'kata'  : ['heian shodan'] },
+    {   'kata'  : ['heian nidan']  },
+    {   'kata'  : ['heian sandan'] },
+    {   'kata'  : ['heian yodan']  },
+    {   'kata'  : ['heian godan']  },
+    {   'kata'  : ['tekki shodan'] },
+    {   'kata'  : ['bassai dai']   },
+    {   'kata'  : ['empi', 'jion', 'hangetsu', 'kanku dai'] },
+    {   'kata'  : ['empi', 'jion', 'hangetsu', 'kanku dai'] },
     {   
         'kata'  : ['empi', 'jion', 'hangetsu', 'kanku dai', 'bassai dai'],
         'count' : 3 
-    },                                                               
-    {                                                       
+    },
+    {
         'kata'  : ['empi', 'jion', 'hangetsu', 'kanku dai', 'bassai dai'],
-        'more'  : ['bassai sho', 'kanku sho' , 'jitte', 'sochin', 'gankaku', 'nijushiho', 'meikyo', 'chinte']    
-    },                                                               
-    {                                                       
+        'more'  : ['bassai sho', 'kanku sho' , 'jitte', 'sochin', 'gankaku', 'nijushiho', 'meikyo', 'chinte']
+    },
+    {
         'kata'  : ['bassai sho', 'kanku sho' , 'jitte', 'sochin', 'gankaku'],
         'more'  : ['nijushiho', 'meikyo', 'gojushiho', 'unsu']    
-    },                                                               
-    {   'kata'  : ['nijushiho', 'gojushiho', 'unsu']   },
+    },
+    {   'kata'  : ['nijushiho', 'gojushiho', 'unsu'] },
 )
 
-order = ['9kyu', '8kyu', '7kyu', '6kyu', '5kyu', '4kyu', '3kyu', '2kyu', '1kyu', '1dan', '2dan', '3dan', '4dan', '5dan']
+ranks = ['9kyu', '8kyu', '7kyu', '6kyu', '5kyu', '4kyu', '3kyu', '2kyu', '1kyu', '1dan', '2dan', '3dan', '4dan', '5dan']
 
 extras = {
     'no kata' : ['mawari no kata', 'gyaku zuki no kata', 'kokutsu dachi no kata', 'zenkutsu dachi no kata'],
