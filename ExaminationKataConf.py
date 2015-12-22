@@ -1,5 +1,7 @@
 # it was easier to hardcode it as python module than to write some fancy config file
 
+# katas ordered by ranks (matching index)
+# FIXME Issue #1
 default = (
     {   'kata'  : ['taikyoku shodan', 'taikyoku nidan', 'taikyoku sandan'] },
     {   'kata'  : ['heian shodan'] },
@@ -26,8 +28,10 @@ default = (
     {   'kata'  : ['nijushiho', 'gojushiho', 'unsu'] },
 )
 
+# supported ranks
 ranks = ['9kyu', '8kyu', '7kyu', '6kyu', '5kyu', '4kyu', '3kyu', '2kyu', '1kyu', '1dan', '2dan', '3dan', '4dan', '5dan']
 
+# extra options
 extras = {
     'no kata' : ['mawari no kata', 'gyaku zuki no kata', 'kokutsu dachi no kata', 'zenkutsu dachi no kata'],
     'dai ken' : ['dai itsu ken', 'dai ni ken', 'dai san ken', 'dai yon ken'],
